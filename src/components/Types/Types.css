@@ -1,0 +1,49 @@
+.Types {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+.Types div {
+  color: white;
+  text-align: center;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  padding: 0.2rem 0.6rem;
+  cursor: pointer;
+  transition: 0.2s ease-in;
+}
+
+.Types div:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+  .Types {
+    gap: 0.3rem;
+  }
+  .Types div {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .Types {
+    flex-wrap: wrap;
+    height: 5rem;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  .Types div {
+    width: 25%;
+  }
+}
+
+@media (max-width: 440px) {
+  .Types div {
+    width: 40%;
+    font-size: 0.7rem;
+  }
+}
