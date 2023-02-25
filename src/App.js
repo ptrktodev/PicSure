@@ -7,10 +7,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { UserStorage } from "./Context";
 
 function App() {
-  React.useEffect(() => {
-    document.title = "PicSure | Home";
-  });
-
   return (
     <div className="App">
       <BrowserRouter>

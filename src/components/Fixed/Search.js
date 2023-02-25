@@ -3,6 +3,7 @@ import "./Search.css";
 import { ReactComponent as OpenLink } from "../../assets/link.svg";
 import Loading from "../Loading/Loading";
 import { UserContext } from "../../Context";
+import Head from "../../Head";
 
 const Home = () => {
   const [img, setImg] = React.useState([]);
@@ -34,6 +35,7 @@ const Home = () => {
 
   return (
     <section className="container animeLeft">
+      <Head title={date} />
       {ativo ? (
         <Loading />
       ) : (

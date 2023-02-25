@@ -1,7 +1,6 @@
 import React from "react";
 import { UserContext } from "../../Context";
 import "./Input.css";
-import { ReactComponent as Lupa } from "../../assets/lupa.svg";
 
 const Input = () => {
   const { valueInput, valueSearch, value } = React.useContext(UserContext);
