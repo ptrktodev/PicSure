@@ -11,7 +11,7 @@ const Input = () => {
       <input
         type="text"
         class="search__input"
-        placeholder="Type your text"
+        placeholder="Search"
         onChange={valueInput}
         value={value}
       />
