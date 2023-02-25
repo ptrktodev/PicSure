@@ -1,26 +1,21 @@
 import React from "react";
-import "./Home.css";
-import Types from "../Types/Types";
+import "./Search.css";
 import { ReactComponent as OpenLink } from "../../assets/link.svg";
 import Loading from "../Loading/Loading";
+import { UserContext } from "../../Context";
 
 const Home = () => {
   const [img, setImg] = React.useState([]);
-  const [search, setSearch] = React.useState("");
   const [ativo, setAtivo] = React.useState(true);
 
-  function btn({ target }) {
-    setSearch(target.textContent);
-  }
+  const { date } = React.useContext(UserContext);
 
   React.useEffect(() => {
     const api = async function () {
       setAtivo(true);
       const key = "Z6REGRpwgP44P320w5pPuqT4bA5OHn2XHvXQwElxyBRDKZRfk4XH6tOn";
       const res = await fetch(
-        `https://api.pexels.com/v1/search?query=${
-          search || "cars"
-        }&per_page=15`,
+        `https://api.pexels.com/v1/search?query=${date}&per_page=15`,
         {
           headers: {
             Authorization: key,
@@ -35,13 +30,10 @@ const Home = () => {
         }, 500);
     };
     api();
-  }, [search]);
+  }, [date]);
 
   return (
     <section className="container animeLeft">
-      <div className="tipo">
-        <Types fun={btn} />
-      </div>
       {ativo ? (
         <Loading />
       ) : (

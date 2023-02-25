@@ -7,6 +7,7 @@
 
 .Types div {
   color: white;
+  font-weight: 700;
   text-align: center;
   border-radius: 1rem;
   font-size: 1.2rem;
@@ -19,15 +20,27 @@
   transform: scale(1.1);
 }
 
+@media (max-width: 800px) {
+  .Types div {
+    font-size: 0.8rem;
+  }
+}
+
 @media (max-width: 600px) {
   .Types {
     gap: 0.3rem;
   }
   .Types div {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 }
 
+@media (max-width: 440px) {
+  .Types div {
+    width: 40%;
+    font-size: 0.7rem;
+  }
+}
 @media (max-width: 380px) {
   .Types {
     flex-wrap: wrap;
@@ -37,13 +50,7 @@
     justify-content: center;
   }
   .Types div {
-    width: 25%;
-  }
-}
-
-@media (max-width: 440px) {
-  .Types div {
     width: 40%;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
 }
