@@ -11,8 +11,7 @@ export const UserStorage = ({ children }) => {
     setValue(target.value);
   }
 
-  function valueSearch({ target }) {
-    console.log(target);
+  function valueSearch(e) {
     if (value.length > 0) {
       setDate(value);
       console.log(date);
@@ -22,9 +21,21 @@ export const UserStorage = ({ children }) => {
     }
   }
 
+  function handleKeyPress(e) {
+    if (e.key === "Enter") {
+      if (value.length > 0) {
+        setDate(value);
+        console.log(date);
+        navigate("/search");
+      } else {
+        setDate(null);
+      }
+    }
+  }
+
   return (
     <UserContext.Provider
-      value={{ valueInput, value, date, setDate, valueSearch }}
+      value={{ valueInput, value, date, setDate, valueSearch, handleKeyPress }}
     >
       {children}
     </UserContext.Provider>

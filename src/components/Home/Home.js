@@ -1,9 +1,9 @@
 import React from "react";
 import "./Home.css";
 import Types from "../Types/Types";
-import { ReactComponent as OpenLink } from "../../assets/link.svg";
 import Loading from "../Loading/Loading";
 import Head from "../../Head";
+import Id from "./Id";
 
 const Home = () => {
   const [img, setImg] = React.useState([]);
@@ -30,10 +30,7 @@ const Home = () => {
       );
       const { photos } = await res.json();
       setImg(photos);
-      if (photos)
-        setTimeout(() => {
-          setAtivo(false);
-        }, 500);
+      if (photos) setAtivo(false);
     };
     api();
   }, [search]);
@@ -55,9 +52,9 @@ const Home = () => {
               </li>
               <div className="infos">
                 <h1>{el.photographer}</h1>
-                <a href={el.src.original} target="_blank">
-                  <OpenLink />
-                </a>
+
+                {/* <OpenLink /> */}
+                <Id id={el.id} img={el.src.large} />
               </div>
             </div>
           ))}

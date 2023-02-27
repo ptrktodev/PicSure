@@ -3,7 +3,8 @@ import { UserContext } from "../../Context";
 import "./Input.css";
 
 const Input = () => {
-  const { valueInput, valueSearch, value } = React.useContext(UserContext);
+  const { valueInput, valueSearch, value, handleKeyPress } =
+    React.useContext(UserContext);
 
   return (
     <div class="search">
@@ -13,6 +14,7 @@ const Input = () => {
         placeholder="Search"
         onChange={valueInput}
         value={value}
+        onKeyDown={handleKeyPress}
       />
       <button class="search__button" onClick={valueSearch}>
         <svg class="search__icon" aria-hidden="true" viewBox="0 0 24 24">

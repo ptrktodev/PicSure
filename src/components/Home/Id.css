@@ -1,0 +1,10 @@
+.download {
+  cursor: pointer;
+  transition: 0.2s ease;
+  border-radius: 0.2rem;
+  background: none;
+}
+
+.download:hover {
+  background: rgba(128, 128, 128, 0.164);
+}

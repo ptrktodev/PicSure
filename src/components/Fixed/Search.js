@@ -1,9 +1,9 @@
 import React from "react";
 import "./Search.css";
-import { ReactComponent as OpenLink } from "../../assets/link.svg";
 import Loading from "../Loading/Loading";
 import { UserContext } from "../../Context";
 import Head from "../../Head";
+import Id from "../Home/Id";
 
 const Home = () => {
   const [img, setImg] = React.useState([]);
@@ -25,10 +25,7 @@ const Home = () => {
       );
       const { photos } = await res.json();
       setImg(photos);
-      if (photos)
-        setTimeout(() => {
-          setAtivo(false);
-        }, 500);
+      if (photos) setAtivo(false);
     };
     api();
   }, [date]);
@@ -47,9 +44,7 @@ const Home = () => {
               </li>
               <div className="infos">
                 <h1>{el.photographer}</h1>
-                <a href={el.src.original} target="_blank">
-                  <OpenLink />
-                </a>
+                <Id id={el.id} img={el.src.large} />
               </div>
             </div>
           ))}
