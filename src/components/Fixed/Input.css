@@ -9,23 +9,13 @@
   font-family: inherit;
   font-size: 0.8rem;
   background-color: #e6e6e6;
-  border: 1px solid rgba(0, 0, 0, 0.185);
-  color: #3b3b3b;
+  color: #000000;
   padding: 0.6rem 1rem;
   border-radius: 30px;
   width: 17em;
   transition: all ease-in-out 0.5s;
   margin-right: -2rem;
-}
-
-.search__input:hover,
-.search__input:focus {
-  box-shadow: 0 0 1em #00000013;
-}
-
-.search__input:focus {
   outline: none;
-  background-color: #e6e6e6;
 }
 
 .search__input::-webkit-input-placeholder {
@@ -56,12 +46,14 @@
 @media (max-width: 800px) {
   .search__input {
     width: 13em;
+    border: 1px solid rgba(0, 0, 0, 0.185);
   }
 }
 
 @media (max-width: 330px) {
   .search__input {
     width: 10em;
+    border: 1px solid rgba(0, 0, 0, 0.185);
     padding: 0.4rem 1rem;
   }
 }
